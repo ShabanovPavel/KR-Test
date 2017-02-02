@@ -1,7 +1,6 @@
 import { Facade } from './core/facade';
 cc.Class({
     extends: cc.Component,
-
     properties: {
         btnStart: cc.Node,
         pnlQuestions: cc.Node,
@@ -12,9 +11,6 @@ cc.Class({
         finish: cc.Label,
         API: null
     },
-
-    // use this for initialization
-
     onLoad: function () {
 
         this.API = new Facade();
@@ -24,7 +20,6 @@ cc.Class({
         this.questionMas = [];
         this.rand();
     },
-
     /**
      * Рандомизирует вопросы
      */
@@ -32,13 +27,13 @@ cc.Class({
         for (let i = 0; i < this._amountQuestion; i++) {
             this.questionMas[i] = i;
         }
-        let a,b,c;
+        let a, b, c;
         for (let i = 0; i < 100; i++) {
-            a=this.getRandomInt(0,this._amountQuestion-1);
-            b=this.getRandomInt(0,this._amountQuestion-1);
-            c=this.questionMas[a];
-            this.questionMas[a]=this.questionMas[b];
-            this.questionMas[b]=c;
+            a = this.getRandomInt(0, this._amountQuestion - 1);
+            b = this.getRandomInt(0, this._amountQuestion - 1);
+            c = this.questionMas[a];
+            this.questionMas[a] = this.questionMas[b];
+            this.questionMas[b] = c;
         }
 
     },
@@ -47,8 +42,6 @@ cc.Class({
 
 
     },
-
-
     onClikBtnStart() {
         this.btnStart.active = false;
         this.pnlQuestions.active = true;
@@ -71,36 +64,30 @@ cc.Class({
         this.API.add(this.questionMas[this._targetQuestion], false);
         this.nextQuestions();
     },
-
     /**
      * Следующее состояние
      */
     nextQuestions() {
-        if (this._targetQuestion === this._amountQuestion-1) {
+        if (this._targetQuestion === this._amountQuestion - 1) {
             this.pnlFinish.active = true;
             this.pnlQuestions.active = false;
             this.closeQuestions();
-            
-        }else{
-        this._targetQuestion++;
-        this.getQuestion();
+
+        } else {
+            this._targetQuestion++;
+            this.getQuestion();
         }
     },
-
     /**
      * Событие завершения вопросов
      */
     closeQuestions() {
         this.finish.string = this.API.getDescription(this.API.analysis());
     },
-
     /**
      * Метод получения нового вопроса 
      */
     getQuestion() {
         this.question.string = this.API.getCurrentQuestion(this.questionMas[this._targetQuestion]);
     },
-
-
-
 });

@@ -14,8 +14,6 @@ export class Facade {
      * @memberOf Facade
      */
     rezult;
-
-
     constructor() {
         this.rezult = {};
     }
@@ -27,7 +25,6 @@ export class Facade {
     createProfile() {
         this.profiles = new ProfilesFactory().getProfiles();
     }
-  
     /**
      * Засчитывает ответ
      * 
@@ -37,21 +34,18 @@ export class Facade {
      * @memberOf Facade
      */
     add(id, fl) {
-
         let type;
         if (fl) {
             type = this.profiles[id].yes;
         } else {
             type = this.profiles[id].no;
         }
-
         if (isNaN(this.rezult[type])) {
             this.rezult[type] = 1;
         } else {
             this.rezult[type] = this.rezult[type] + 1;
         }
     }
-
     /**
      * Анализаирует полученные данные, делает умозаключение
      * 
@@ -69,14 +63,10 @@ export class Facade {
         collectionInformation = this.definition(PersonalityType.S, PersonalityType.N);
         makingDecisions = this.definition(PersonalityType.T, PersonalityType.F);
         wayСommunicate = this.definition(PersonalityType.J, PersonalityType.P);
-
-
         //Вытаскиваем психотип на основе определенных велечин
         let rez = this.getPeopleTypes([powerLine, collectionInformation, makingDecisions, wayСommunicate]);
         return rez;
     }
-
-
     /**
      * Определяет чего больше получилось из 2 типов
      * 
@@ -87,11 +77,10 @@ export class Facade {
      * @memberOf Facade
      */
     definition(type1, type2) {
-        if(this.rezult[type1]==null) this.rezult[type1]=0;
-        if(this.rezult[type2]==null) this.rezult[type2]=0;
+        if (this.rezult[type1] == null) this.rezult[type1] = 0;
+        if (this.rezult[type2] == null) this.rezult[type2] = 0;
         return this.rezult[type1] > this.rezult[type2] ? type1 : type2;
     }
-
     /**
      * Возвращает обект типа человека
      * 
@@ -102,7 +91,6 @@ export class Facade {
      */
     getPeopleTypes(param) {
         let rezult;
-       
         People.forEach((item) => {
             let fl = false;
             for (let i = 0; i < 4; i++) {
@@ -118,7 +106,6 @@ export class Facade {
         });
         return rezult.type;
     }
-
     /**
      * Возвращает количество вопрососв
      * 
@@ -128,9 +115,7 @@ export class Facade {
      */
     getAmountQuestion() {
         return this.profiles.length;
-
     }
-
     /**
      * Возвращает формулировку вопроса
      * 
@@ -142,7 +127,6 @@ export class Facade {
     getCurrentQuestion(id) {
         return this.profiles[id].questions;
     }
-
     /**
      * возвращает характеристику социотипа
      * 
@@ -151,15 +135,13 @@ export class Facade {
      * 
      * @memberOf Facade
      */
-    getDescription(param){
+    getDescription(param) {
         let rez;
-        Description.forEach((item)=>{            
-            if(item.type===param){
-                rez= item.description;
+        Description.forEach((item) => {
+            if (item.type === param) {
+                rez = item.description;
             }
         });
         return rez;
     }
-    
-
 }

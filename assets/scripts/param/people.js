@@ -1,13 +1,13 @@
-import {PeopleTypes as type} from './types-people';
-import {PersonalityType as pType} from './personality-type';
+import { PeopleTypes as type } from './types-people';
+import { PersonalityType as pType } from './personality-type';
 
 const People = [
     /**
      * Искатель
      */
     {
-        type:type.ENTP,
-        value:[
+        type: type.ENTP,
+        value: [
             pType.E,
             pType.N,
             pType.T,
@@ -18,8 +18,8 @@ const People = [
      * Посредник
      */
     {
-        type:type.ISFP,
-        value:[
+        type: type.ISFP,
+        value: [
             pType.I,
             pType.S,
             pType.F,
@@ -30,8 +30,8 @@ const People = [
      * Энтузиаст
      */
     {
-        type:type.ESFJ,
-        value:[
+        type: type.ESFJ,
+        value: [
             pType.E,
             pType.S,
             pType.F,
@@ -42,8 +42,8 @@ const People = [
      * Аналитик
      */
     {
-        type:type.INTJ,
-        value:[
+        type: type.INTJ,
+        value: [
             pType.I,
             pType.N,
             pType.T,
@@ -54,8 +54,8 @@ const People = [
      * Наставник
      */
     {
-        type:type.ENFJ,
-        value:[
+        type: type.ENFJ,
+        value: [
             pType.E,
             pType.N,
             pType.F,
@@ -66,8 +66,8 @@ const People = [
      * Инспектор
      */
     {
-        type:type.ISTJ,
-        value:[
+        type: type.ISTJ,
+        value: [
             pType.I,
             pType.S,
             pType.T,
@@ -78,8 +78,8 @@ const People = [
      * Маршал
      */
     {
-        type:type.ESTP,
-        value:[
+        type: type.ESTP,
+        value: [
             pType.E,
             pType.S,
             pType.T,
@@ -90,8 +90,8 @@ const People = [
      * Лирик
      */
     {
-        type:type.INFP,
-        value:[
+        type: type.INFP,
+        value: [
             pType.I,
             pType.N,
             pType.F,
@@ -102,8 +102,8 @@ const People = [
      * Политик
      */
     {
-        type:type.ESFP,
-        value:[
+        type: type.ESFP,
+        value: [
             pType.E,
             pType.S,
             pType.F,
@@ -114,8 +114,8 @@ const People = [
      * Критик
      */
     {
-        type:type.INTP,
-        value:[
+        type: type.INTP,
+        value: [
             pType.I,
             pType.N,
             pType.T,
@@ -126,8 +126,8 @@ const People = [
      * Предприниматель
      */
     {
-        type:type.ENTJ,
-        value:[
+        type: type.ENTJ,
+        value: [
             pType.E,
             pType.N,
             pType.T,
@@ -138,8 +138,8 @@ const People = [
      * Хранитель
      */
     {
-        type:type.ISFJ,
-        value:[
+        type: type.ISFJ,
+        value: [
             pType.I,
             pType.S,
             pType.F,
@@ -150,8 +150,8 @@ const People = [
      * Управитель
      */
     {
-        type:type.ESTJ,
-        value:[
+        type: type.ESTJ,
+        value: [
             pType.E,
             pType.S,
             pType.T,
@@ -162,8 +162,8 @@ const People = [
      * Гуманист
      */
     {
-        type:type.INFJ,
-        value:[
+        type: type.INFJ,
+        value: [
             pType.I,
             pType.N,
             pType.F,
@@ -174,8 +174,8 @@ const People = [
      * Советчик
      */
     {
-        type:type.ENFP,
-        value:[
+        type: type.ENFP,
+        value: [
             pType.E,
             pType.N,
             pType.F,
@@ -186,8 +186,8 @@ const People = [
      * Мастер
      */
     {
-        type:type.ISTP,
-        value:[
+        type: type.ISTP,
+        value: [
             pType.I,
             pType.S,
             pType.T,
