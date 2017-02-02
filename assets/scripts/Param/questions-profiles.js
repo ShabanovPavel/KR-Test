@@ -6,17 +6,17 @@ const params=[
         no:type.I,
     },
     {
-        questions:"dfdsf",
+        questions:"dfd1ssf",
         yes:type.S,
         no:type.N,
     },
     {
-        questions:"dfdsf",
+        questions:"dfdg2sf",
         yes:type.T,
         no:type.F,
     },
     {
-        questions:"dfdsf",
+        questions:"dfds3f",
         yes:type.J,
         no:type.P,
     },

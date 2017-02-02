@@ -1,22 +1,29 @@
-import { PeopleTypes } from './types-people';
+import { Questions } from '../param/export-param';
 
-export class ProfilesFactory{
+export class ProfilesFactory {
+    /**
+     * Анкета
+     * @type {Profiles}
+     * @memberOf ProfilesFactory
+     */
+    _profiels;
+
+    constructor() {
+        this._profiels = [];
+    }
 
     /**
-     * @returns {ProfilesFactory}
+     * Возвращает анкету 
+     * 
+     * @returns {Profiles}
+     * 
+     * @memberOf ProfilesFactory
      */
-    static instance() { 
-        if (!this._instance) { 
-            this._instance = new ProfilesFactory();
-        }
-        return this._instance;
+    getProfiles() {
+        Questions.forEach((questions) => {
+            this._profiels.push(questions);
+            
+        });
+        return this._profiels;
     }
-
-    constructor(){
-        
-    }
-
-
-
-
 }
